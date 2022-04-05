@@ -6,13 +6,13 @@ class Grafica:
     datos = pd.read_csv("criticapelicula.csv", sep =";")
     def grafica_inicial():
         global lista_votantes
-        lista_votantes = list(datos["Cantidad de votantes"]) ; lista_productos = list(datos["Productos"])
+        lista_votantes = list(datos["Cantidad de votantes"])
         eje_x = ["5", "4", "3", "2", "1", "0"]
         eje_y = lista_votantes
         plt.bar(eje_x, eje_y) ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
         plt.show()
-    def media_varianza():
-        lista_productos = list(datos["Productos"]) ; suma_producto = 0 ; suma_frecuencia = 0
+    def calculos():
+        lista_productos = list(datos["Productos"]) ; suma_producto = 0 ; suma_frecuencia = 0 ; lista_votantes = list(datos["Cantidad de votantes"])
         for i in lista_productos:
             suma_producto  += i
         for j in lista_votantes:
@@ -21,12 +21,12 @@ class Grafica:
 
 
 def elegir_subejercicio():
-    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media,varianza y desviación típica\n n --> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
+    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media,varianza y desviación típica\n --> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
     enunciado=int(input())
     if enunciado == 1:
-        Grafica.recibir_datos()
+        Grafica.grafica_inicial()
     elif enunciado == 2:
-        Grafica.nota_final()
+        Grafica.calculos()
     elif enunciado == 3:
         exit()
     else:
