@@ -12,12 +12,17 @@ class Grafica:
         plt.bar(eje_x, eje_y) ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
         plt.show()
     def calculos():
-        lista_productos = list(datos["Productos"]) ; suma_producto = 0 ; suma_frecuencia = 0 ; lista_votantes = list(datos["Cantidad de votantes"])
+        lista_productos = list(datos["Productos"]) ; lista_votantes = list(datos["Cantidad de votantes"]) ; lista_varianza = list(datos["Varianza"])
+        suma_producto = 0 ; suma_frecuencia = 0 ; suma_varianza = 0
         for i in lista_productos:
             suma_producto  += i
         for j in lista_votantes:
             suma_frecuencia += j
         media = suma_producto/suma_frecuencia
+        for k in lista_varianza:
+            suma_varianza += k
+        varianza = suma_varianza/suma_frecuencia
+        print(f"La media es {media} y la varianza {varianza}")
 
 
 def elegir_subejercicio():
