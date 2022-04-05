@@ -1,10 +1,34 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
-class grafica:
+from colorama import Fore, Style
+class Grafica:
+    global datos
     datos = pd.read_csv("criticapelicula.csv", sep =";")
-    lista_votantes = list(datos["Cantidad de votantes"])
-    eje_x = ["5", "4", "3", "2", "1", "0"]
-    eje_y = lista_votantes
-    plt.bar(eje_x, eje_y) ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
-    plt.show()
+    def grafica_inicial():
+        global lista_votantes
+        lista_votantes = list(datos["Cantidad de votantes"]) ; lista_productos = list(datos["Productos"])
+        eje_x = ["5", "4", "3", "2", "1", "0"]
+        eje_y = lista_votantes
+        plt.bar(eje_x, eje_y) ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
+        plt.show()
+    def media_varianza():
+        lista_productos = list(datos["Productos"]) ; suma_producto = 0 ; suma_frecuencia = 0
+        for i in lista_productos:
+            suma_producto  += i
+        for j in lista_votantes:
+            suma_frecuencia += j
+        media = suma_producto/suma_frecuencia
+
+
+def elegir_subejercicio():
+    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media,varianza y desviación típica\n n --> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
+    enunciado=int(input())
+    if enunciado == 1:
+        Grafica.recibir_datos()
+    elif enunciado == 2:
+        Grafica.nota_final()
+    elif enunciado == 3:
+        exit()
+    else:
+        elegir_subejercicio()
+elegir_subejercicio()
