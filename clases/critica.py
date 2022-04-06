@@ -1,17 +1,19 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from colorama import Fore, Style
+import math
 class Grafica:
     global datos
     datos = pd.read_csv("criticapelicula.csv", sep =";")
-    def grafica_inicial():
+    def grafica_inicial(): # Apartado 1
         global lista_votantes
         lista_votantes = list(datos["Cantidad de votantes"])
         eje_x = ["5", "4", "3", "2", "1", "0"]
         eje_y = lista_votantes
         plt.bar(eje_x, eje_y) ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
         plt.show()
-    def calculos():
+        elegir_subejercicio()
+    def calculos(): # Apartado 2
         lista_productos = list(datos["Productos"]) ; lista_votantes = list(datos["Cantidad de votantes"]) ; lista_varianza = list(datos["Varianza"])
         suma_producto = 0 ; suma_frecuencia = 0 ; suma_varianza = 0
         for i in lista_productos:
@@ -22,11 +24,13 @@ class Grafica:
         for k in lista_varianza:
             suma_varianza += k
         varianza = suma_varianza/suma_frecuencia ;  varianza = round (varianza, 2)
-        print(f"La media es {media} y la varianza {varianza}")
+        desviacion_tipica = math.sqrt(varianza) ; desviacion_tipica = round(desviacion_tipica, 2)
+        print(f"\n La media es {media}, la varianza {varianza} y la desviación típica {desviacion_tipica} \n ")
+        elegir_subejercicio()
 
 
 def elegir_subejercicio():
-    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media,varianza y desviación típica\n --> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
+    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media, varianza y desviación típica\n --> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
     enunciado=int(input())
     if enunciado == 1:
         Grafica.grafica_inicial()
