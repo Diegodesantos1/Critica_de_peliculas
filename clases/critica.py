@@ -15,7 +15,7 @@ class Grafica:
         elegir_subejercicio()
     def calculos(): # Apartado 2
         lista_productos = list(datos["Productos"]) ; lista_votantes = list(datos["Cantidad de votantes"]) ; lista_varianza = list(datos["Varianza"])
-        suma_producto = 0 ; suma_frecuencia = 0 ; suma_varianza = 0
+        suma_producto = 0 ; suma_frecuencia = 0 ; suma_varianza = 0 ; global desviacion_tipica ; global media
         for i in lista_productos:
             suma_producto  += i
         for j in lista_votantes:
@@ -27,16 +27,22 @@ class Grafica:
         desviacion_tipica = math.sqrt(varianza) ; desviacion_tipica = round(desviacion_tipica, 2)
         print(f"\n La media es {media}, la varianza {varianza} y la desviación típica {desviacion_tipica} \n ")
         elegir_subejercicio()
+    def repartos():
+        lim_inferior = (desviacion_tipica - media)
+        lim_superior = (desviacion_tipica + media)
+        
 
 
 def elegir_subejercicio():
-    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media, varianza y desviación típica\n --> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
+    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar la gráfica inicial\n --> 2: Cálculo de media, varianza y desviación típica\n --> 3: Repartos 68% , 95%, 97% \n--> 3: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
     enunciado=int(input())
     if enunciado == 1:
         Grafica.grafica_inicial()
     elif enunciado == 2:
         Grafica.calculos()
     elif enunciado == 3:
+        Grafica.repartos
+    elif enunciado == 4:
         exit()
     else:
         elegir_subejercicio()
