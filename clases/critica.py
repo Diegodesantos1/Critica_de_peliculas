@@ -18,10 +18,10 @@ class Grafica:
             suma_producto  += i
         for j in lista_votantes:
             suma_frecuencia += j
-        media = suma_producto/suma_frecuencia
+        media = suma_producto/suma_frecuencia ; media = round(media, 2)
         for k in lista_varianza:
             suma_varianza += k
-        varianza = suma_varianza/suma_frecuencia
+        varianza = suma_varianza/suma_frecuencia ;  varianza = round (varianza, 2)
         print(f"La media es {media} y la varianza {varianza}")
 
 
