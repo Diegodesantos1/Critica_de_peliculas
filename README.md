@@ -4,15 +4,37 @@
 En este [repositorio](https://github.com/Diegodesantos1/Serie_de_Notas) queda resuelto el ejercicio de serie de datos. Para llevar a cabo el proyecto me he documentado a través de la teoría que se encuentra en el campus virtual y otras fuentes.
 ***
 ## Ejercicio 1
+Para conocer mejor la distribución gaussiana, vamos a dejar a un lado las notas obtenidas en el examen y vamos a concentrarnos en las críticas de películas.
 
-Vamos a utilizar un caso práctico que se usa muchas veces en la presentación de las nociones básicas de estadísticas: la descripción y el análisis de una serie de notas que ha obtenido un estudiante. Este caso práctico es sencillo y todo el mundo se siente implicado porque se basa en nuestra experiencia. Además, nos permitirá entender las nociones necesarias para la comprensión de datos que también son aplicables a los casos más complejos que vamos a tratar en los capítulos siguientes.
+Estas son las opiniones (calificadas de 0 a 5) obtenidas por una película, donde 5 es la mejor nota que puede obtener la película: las famosas 5 estrellas que podemos encontrar en todos los sitios de críticas de cine.
 
-Este es el contexto: actualmente está en formación para convertirse en experto en inteligencia artificial y acaban de darle sus notas trimestrales, que puede ver a continuación (se trata de una puntuación sobre 20): [3,19,10,15,14,12,9,8,11,12,11,12,13,11,14,16]
+Curva de Gauss
 
-Como puede comprobar, esta pequeña serie estadística contiene muchas notas distintas. Primero vamos a proceder a la deducción de una tendencia central, es decir, intentar determinar un valor alrededor del que se concentra el conjunto de las notas. Luego estudiaremos su dispersión y al final buscaremos la existencia de datos aberrantes, es decir, no representativos del conjunto de las notas. Todos recordamos un examen donde no habíamos repasado los conceptos principales y obtuvimos una nota no representativa de las notas que habíamos obtenido durante el año.
+Ante este tipo de gráfico, podemos afirmar que la serie de observaciones sigue una ley matemática llamada ley normal o ley de Gauss (en honor a Karl Friederich Gauss (1777-1855)).
 
-Debe realizar este tipo de análisis en cualquier serie de observaciones que tendrá que utilizar en el ámbito de los proyectos de Machine Learning. En efecto, hacer mediciones de tendencia y de dispersión de sus datos le permitirá comprender su significado, su papel y su utilidad en la predicción que se ha de efectuar. Identificar los datos aberrantes le permitirá excluir datos no representativos que podrían alterar el aprendizaje.
+En estadística y en probabilidad, la ley normal permite representar muchos fenómenos aleatorios naturales. Cuando una serie de observaciones obedece a la ley normal, se puede afirmar:
 
+El 50 % de las observaciones están por encima de la media.
+
+El 50 % de las observaciones están por debajo de la media.
+
+El 68 % de las observaciones están comprendidas en el intervalo que va desde la media - la desviación típica hasta la media + la desviación típica.
+
+El 95 % de las observaciones están comprendidas en el intervalo que va desde la media - 2* la desviación típica hasta la media + 2* la desviación típica.
+
+El 99,7 % de las observaciones están comprendidas en el intervalo que va desde la media - 3* la desviación típica hasta la media + 3* la desviación típica.
+
+Ahora vamos a hacer algunos cálculos que al mismo tiempo nos permitirán ver cómo utilizar la idea de frecuencia en los cálculos de media y de desviación típica.
+
+Las opiniones corresponden a nuestros valores observados denominados Xi, y la cantidad de votantes se equipara a la cantidad de veces en que el valor observado ha sido elegido por los espectadores. Entonces hablamos de frecuencia de elección, que se denomina Ni.
+
+A fin de calcular la media de esta serie de observaciones, para cada observación hay que realizar el producto de las opiniones por la cantidad de votantes:
+
+Lo que da un valor de 1,35 para la desviación típica.
+
+Ahora le toca a usted examinar el reparto de las observaciones en función de las desviaciones entre la media y la desviación típica que permite definir los 68 %, 95 % y 97 % de repartos.
+
+Como ejemplo, podemos comprobar que el 68 % de las observaciones están comprendidas en el intervalo [1,3]. Los límites del intervalo se han determinado mediante la resta de la desviación típica a la media para el límite inferior y la suma de la desviación típica a la media para el límite superior. 
 
 El código empleado para resolverlo es el siguiente: 
 
