@@ -102,7 +102,4 @@ def elegir_subejercicio():
 
 Su UML:
 
-![image](https://user-images.githubusercontent.com/91721855/164473358-92de9663-07fc-45e1-a90d-0744b305767d.png)
-
-
-En formato [XML](https://github.com/Diegodesantos1/Serie_de_Notas/blob/main/UML/notas.drawio)
+En formato [XML]()
