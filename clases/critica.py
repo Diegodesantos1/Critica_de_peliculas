@@ -14,15 +14,16 @@ class Grafica:
         plt.show()
         elegir_subejercicio()
     def calculos(): # Apartado 2
-        lista_productos = list(datos["Productos"]) ; lista_votantes = list(datos["Cantidad de votantes"]) ; lista_varianza = list(datos["Varianza"])
+        lista_opinion = list(datos["Opinión"]) ; lista_votantes = list(datos["Cantidad de votantes"])
         suma_producto = 0 ; suma_frecuencia = 0 ; suma_varianza = 0
-        for i in lista_productos:
-            suma_producto  += i
+        for i in range (len(lista_opinion)):
+            suma_producto += lista_opinion[i] * lista_votantes[i]
         for j in lista_votantes:
             suma_frecuencia += j
         media = round((suma_producto/suma_frecuencia), 2)
-        for k in lista_varianza:
-            suma_varianza += k
+        for k in range (len(lista_opinion)):
+            suma_varianza = lista_votantes[k]*((lista_opinion[k] - media)**2)
+        media = round((suma_producto/suma_frecuencia), 2)
         varianza = round((suma_varianza/suma_frecuencia), 2)
         desviacion_tipica = round((math.sqrt(varianza)), 2)
         print(f"\n La media es {media}, la varianza {varianza} y la desviación típica {desviacion_tipica} \n ")
