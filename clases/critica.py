@@ -36,9 +36,18 @@ class Grafica:
             suma_frecuencia += j
         intervalo = (68 * suma_frecuencia)/100
         print(f"El 68% de los datos son {intervalo}")
-        l_inferior = 136 ; suma_frecuencia_anterior = 136 ; frecuencia_intervalo = 133 ; amplitud = 1  #Datos sacados de la tabla
+        l_inferior = 1 ; suma_frecuencia_anterior = 136 ; frecuencia_intervalo = 133 ; amplitud = 1  #Datos sacados de la tabla
         percentil_68 = round(l_inferior + (((intervalo - suma_frecuencia_anterior)/frecuencia_intervalo)* amplitud), 3)
         print(f"El percentil 68% es {percentil_68}")
+    def percentil_95():
+        lista_votantes = list(datos["Cantidad de votantes"]) ; suma_frecuencia = 0
+        for j in lista_votantes:
+            suma_frecuencia += j
+        intervalo = (95 * suma_frecuencia)/100
+        print(f"El 95% de los datos son {intervalo}")
+        l_inferior = 4 ; suma_frecuencia_anterior = 414 ; frecuencia_intervalo = 99 ; amplitud = 1  #Datos sacados de la tabla
+        percentil_95 = round(l_inferior + (((intervalo - suma_frecuencia_anterior)/frecuencia_intervalo)* amplitud), 3)
+        print(f"El percentil 68% es {percentil_95}")
 
 
 def elegir_subejercicio():
@@ -50,6 +59,7 @@ def elegir_subejercicio():
         Grafica.calculos()
     elif enunciado == 3:
         Grafica.percentil_68()
+        Grafica.percentil_95()
     elif enunciado == 4:
         exit()
     else:
