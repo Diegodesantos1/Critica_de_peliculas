@@ -22,16 +22,15 @@ class Grafica:
             suma_frecuencia += j
         media = round((suma_producto/suma_frecuencia), 2)
         for k in range (len(lista_opinion)):
-            suma_varianza = lista_votantes[k]*((lista_opinion[k] - media)**2)
+            suma_varianza += lista_votantes[k]*((lista_opinion[k] - media)**2)
+            print(suma_varianza)
         media = round((suma_producto/suma_frecuencia), 2)
         varianza = round((suma_varianza/suma_frecuencia), 2)
         desviacion_tipica = round((math.sqrt(varianza)), 2)
         print(f"\n La media es {media}, la varianza {varianza} y la desviación típica {desviacion_tipica} \n ")
         elegir_subejercicio()
-    def repartos(media, desviacion_tipica):
-        lim_inferior = round((desviacion_tipica - media), 2)
-        lim_superior = round((desviacion_tipica + media), 2)
-        print (f"los limites son {lim_inferior} y {lim_superior}")
+    def percentiles():
+        pass
 
 
 def elegir_subejercicio():
