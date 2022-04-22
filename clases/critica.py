@@ -56,6 +56,7 @@ class Grafica:
         l_inferior = 4 ; suma_frecuencia_anterior = 513 ; frecuencia_intervalo = 40 ; amplitud = 1  #Datos sacados de la tabla
         percentil_98 = round(l_inferior + (((intervalo - suma_frecuencia_anterior)/frecuencia_intervalo)* amplitud), 3)
         print(f"El percentil 68% es {percentil_98}")
+        elegir_subejercicio()
 
 
 def elegir_subejercicio():
@@ -73,4 +74,3 @@ def elegir_subejercicio():
         exit()
     else:
         elegir_subejercicio()
-elegir_subejercicio()
