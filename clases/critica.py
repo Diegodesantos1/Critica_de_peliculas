@@ -14,6 +14,7 @@ class Grafica:
         plt.show()
         elegir_subejercicio()
     def calculos(): # Apartado 2
+        global lista_votantes
         lista_opinion = list(datos["Opinión"]) ; lista_votantes = list(datos["Cantidad de votantes"])
         suma_producto = 0 ; suma_frecuencia = 0 ; suma_varianza = 0
         for i in range (len(lista_opinion)):
@@ -29,8 +30,15 @@ class Grafica:
         desviacion_tipica = round((math.sqrt(varianza)), 2)
         print(f"\n La media es {media}, la varianza {varianza} y la desviación típica {desviacion_tipica} \n ")
         elegir_subejercicio()
-    def percentiles():
-        pass
+    def percentil_68():
+        lista_votantes = list(datos["Cantidad de votantes"]) ; suma_frecuencia = 0
+        for j in lista_votantes:
+            suma_frecuencia += j
+        intervalo = (68 * suma_frecuencia)/100
+        print(f"El 68% de los datos son {intervalo}")
+        l_inferior = 136 ; suma_frecuencia_anterior = 136 ; frecuencia_intervalo = 133 ; amplitud = 1  #Datos sacados de la tabla
+        percentil_68 = round(l_inferior + (((intervalo - suma_frecuencia_anterior)/frecuencia_intervalo)* amplitud), 3)
+        print(f"El percentil 68% es {percentil_68}")
 
 
 def elegir_subejercicio():
@@ -41,7 +49,7 @@ def elegir_subejercicio():
     elif enunciado == 2:
         Grafica.calculos()
     elif enunciado == 3:
-        Grafica.repartos(2.46,2.57)
+        Grafica.percentil_68()
     elif enunciado == 4:
         exit()
     else:
