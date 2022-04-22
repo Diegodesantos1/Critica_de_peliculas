@@ -3,7 +3,12 @@ import matplotlib.pyplot as plt
 from colorama import Fore, Style
 import math
 class Grafica:
-    global datos ; global desviacion_tipica ; global media
+    global datos,desviacion_tipica, media
+    def __init__(self, lista_votantes, lista_opinion, suma_producto, suma_frecuencia, suma_varianza, media, varianza, desviacion_tipica, l_inferior, suma_frecuencia_anterior, frecuencia_intervalo, amplitud):
+        self.lista_votantes = lista_votantes ; self.lista_opinion = lista_opinion ;self.suma_producto = suma_producto
+        self.suma_frecuencia = suma_frecuencia ; self.suma_varianza = suma_varianza ; self.media = media ; self.varianza = varianza
+        self.desviacion_tipica = desviacion_tipica ; self.l_inferior = l_inferior ; self.suma_frecuencia_anterior = suma_frecuencia_anterior
+        self.frecuencia_intervalo = frecuencia_intervalo ; self.amplitud = amplitud
     datos = pd.read_csv("criticapelicula.csv", sep =";")
     def grafica_inicial(): # Apartado 1
         global lista_votantes
