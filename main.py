@@ -1,6 +1,5 @@
 import pandas as pnd
 import Clases_Rubén.JMPEstadisticas as jmp
-import numpy as np
 
 from Clases import critica
 if __name__ == '__main__':
