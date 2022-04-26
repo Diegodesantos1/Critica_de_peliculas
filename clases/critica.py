@@ -9,11 +9,11 @@ class Grafica:
         self.suma_frecuencia = suma_frecuencia ; self.suma_varianza = suma_varianza ; self.media = media ; self.varianza = varianza
         self.desviacion_tipica = desviacion_tipica ; self.l_inferior = l_inferior ; self.suma_frecuencia_anterior = suma_frecuencia_anterior
         self.frecuencia_intervalo = frecuencia_intervalo ; self.amplitud = amplitud
-    datos = pd.read_csv("imbd_sup.csv", sep =";")
+    datos = pd.read_csv("criticapelicula.csv", sep =";")
     def grafica_inicial(): # Apartado 1
         global lista_votantes
-        lista_votantes = list(datos["rating"])
-        eje_x = ["5","4","3", "2", "1", "0"]
+        lista_votantes = list(datos["Cantidad de votantes"])
+        eje_x = [5,4,3, 2, 1, 0]
         eje_y = lista_votantes
         plt.bar(eje_x, eje_y, color = "black") ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
         plt.show()
