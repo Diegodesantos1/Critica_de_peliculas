@@ -7,7 +7,7 @@ if __name__ == '__main__':
     if eleccion == 1:
         critica.elegir_subejercicio()
     elif eleccion ==2:
-        datos = pnd.read_csv("imbd_sup.csv", header=0 , sep =",")
+        datos = pnd.read_csv("imdb_sup.csv", header=0 , sep =",")
         lista_notas = list(datos["Rating"])
         observaciones = pnd.DataFrame({'NOTAS': lista_notas})
         #--- ANALISIS DE UNA CARACTERISTICA ---

@@ -25,13 +25,13 @@ class JMPEstadisticas:
         caracteristica = self.caracteristica.sort_values()
         caracteristica = caracteristica.reset_index(drop=True)
         n = self.caracteristica.count()
-        par = False;
+        par = False
         if (n % 2 == 0):
             print("La cantidad de observaciones es par.")
             par = True
 
         if par:
-            rango = (n / 2);
+            rango = (n / 2)
             print("RANGO = "+str(rango))
             rangoPython = rango-1
             valor1 = caracteristica[rangoPython]
@@ -122,7 +122,7 @@ class JMPEstadisticas:
 
 
     def visualizacion(self,media,mediana,cuartil_1,cuartil_2,cuartil_3):
-
+        media = round(media,2) ; mediana = round(mediana, 2) ; cuartil_1 = round(cuartil_1) ; cuartil_2 = round(cuartil_2) ; cuartil_3 = round(cuartil_3)
         plt.subplot(2, 2, 1)
         plt.hist(self.caracteristica)
         plt.title("Histograma y media")
