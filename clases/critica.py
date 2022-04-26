@@ -13,7 +13,7 @@ class Grafica:
     def grafica_inicial(): # Apartado 1
         global lista_votantes
         lista_votantes = list(datos["rating"])
-        eje_x = ["10","9","8","7","6","5","4","3", "2", "1", "0"]
+        eje_x = ["5","4","3", "2", "1", "0"]
         eje_y = lista_votantes
         plt.bar(eje_x, eje_y, color = "black") ; plt.ylabel("Cantidad de votantes") ; plt.xlabel("Nota de las películas") ; plt.title("Opiniones obtenidas para una película")
         plt.show()
