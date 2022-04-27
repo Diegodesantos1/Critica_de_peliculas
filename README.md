@@ -94,7 +94,7 @@ def elegir_subejercicio():
 ```
 
 Código Avanzado:
-```
+```python
 from collections import Counter
 from math import *
 import matplotlib.pyplot as plt
