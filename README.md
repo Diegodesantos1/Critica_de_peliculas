@@ -1,4 +1,4 @@
-<h1 align="center">Serie de notas</h1>
+<h1 align="center">Crítica películas</h1>
 
 ---
 En este [repositorio](https://github.com/Diegodesantos1/Serie_de_Notas) queda resuelto el ejercicio de serie de datos. Para llevar a cabo el proyecto me he documentado a través de la teoría que se encuentra en el campus virtual y otras fuentes.
