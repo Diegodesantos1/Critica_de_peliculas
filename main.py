@@ -3,7 +3,7 @@ import Clases_Rubén.JMPEstadisticas as jmp
 
 from Clases import critica
 if __name__ == '__main__':
-    eleccion = int(input(("¿Qué versión quieres usar? \n 1: Básicas \n 2: Completa\n")))
+    eleccion = int(input(("¿Qué versión quieres usar? \n 1: Básica \n 2: Completa\n")))
     if eleccion == 1:
         critica.elegir_subejercicio()
     elif eleccion ==2:
