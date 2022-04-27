@@ -333,4 +333,6 @@ class JMPEstadisticas:
 ```
 Su UML:
 
+![image](https://user-images.githubusercontent.com/91721855/165619806-85ced798-ad2b-490a-9056-6cdbf62d575f.png)
+
 En formato [XML]()
